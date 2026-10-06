@@ -143,7 +143,7 @@ export function MindMapCanvas() {
     if (!state.selectedNodeId || !state.present) return;
     
     // Find node to check children length
-    let nodeToDelete = null;
+    let nodeToDelete: any = null;
     const findNode = (n: any) => {
       if (n.id === state.selectedNodeId) nodeToDelete = n;
       if (n.children) n.children.forEach(findNode);

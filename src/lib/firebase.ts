@@ -2,14 +2,14 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDvVpIBzojM-Am3i4amtz9iPIkwDNg4xbs",
-  authDomain: "smartmindmappm.firebaseapp.com",
-  projectId: "smartmindmappm",
-  storageBucket: "smartmindmappm.firebasestorage.app",
-  messagingSenderId: "592654875499",
-  appId: "1:592654875499:web:750029b29d71783a66ea2e",
-  measurementId: "G-E123FGWDGP",
-  databaseURL: "https://smartmindmappm-default-rtdb.firebaseio.com"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL
 };
 
 // Initialize Firebase securely to prevent double initialization in React Strict Mode

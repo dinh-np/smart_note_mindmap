@@ -37,21 +37,23 @@ All views read and mutate the exact same `MindNode` tree:
 9. **Prezi-Style Presentation:** Smooth camera pan/zoom along Level 1 branches with AI speaker notes.
 
 ## 3. Implementation Sprint Roadmap
-- **Sprint 1: Core Engine, Local-First Canvas & Security**
+- **Sprint 1: Core Engine, Local-First Canvas & Security [✅ DONE]**
   - Initialize Next.js App Router, Tailwind Krones theme (`#0066AB`), Lucide icons.
   - Setup PWA Manifest and Service Worker (`next-pwa`).
   - Implement `src/lib/db.ts` (Dexie.js with AES-GCM Web Crypto helpers).
-  - Build Controlled Canvas (Pure React DOM cards + SVG Bézier lines) with Desktop shortcuts (`Tab`, `Enter`, `Delete`) and Mobile FAB.
+  - Build Controlled Canvas (Pure React DOM cards + SVG Bézier lines) with Desktop shortcuts (`Tab`, `Enter`, `Delete`) and Mobile Context Toolbar.
   - 30-step in-memory Undo/Redo stack and full JSON backup/restore.
-- **Sprint 2: MindGenius Parser & Multi-View Suite**
+- **Sprint 2: MindGenius Parser & Multi-View Suite [✅ DONE]**
   - 2-Way MindGenius (`.mgmx`) ZIP/XML parser with UTF-8 encoding.
   - Implement Gantt Chart, RACI Grid, Resource Heatmap, Risk 5x5 Matrix, and Kanban.
-- **Sprint 3: Gemini Pro AI Copilot, WebMCP Tools & Office Exporters**
+- **Sprint 3: Gemini Pro AI Copilot, WebMCP Tools & Office Exporters [✅ DONE]**
   - Next.js Server Action `/api/ai/mindmap` with Rate Limiting (5 req/min) and Dexie prompt caching.
   - In-browser WebMCP tool registration (`src/lib/webmcp.ts`) for canvas command and control.
   - Complete Office export suite: `.pptx`, `.docx`, `.xlsx`, `.xml` (MSPDI), `.pdf`, `.png`.
-- **Sprint 4: Firebase Multi-Device Sync & Cross-Platform Hardening**
-  - Firebase Authentication + Cloud Firestore background sync engine.
-  - Mobile touch containment: `touch-action: none;`, `visualViewport` keyboard pan, iOS Safe Area insets.
-  - iOS Web Share API fallback for file downloads.
+- **Sprint 4: Firebase Multi-Device Sync & Cross-Platform Hardening [✅ DONE]**
+  - Firebase Authentication + Cloud Firestore (RTDB) background sync engine.
+  - Mobile touch containment: `touch-none`, Native `PointerEvent` Pinch-to-zoom matrix.
+  - Mobile Virtual Keyboard Auto-Pan via `visualViewport`.
+  - iOS Web Share API `navigator.share()` fallback for file downloads.
+  - Instant background flush to Firebase via `visibilitychange`.
   
